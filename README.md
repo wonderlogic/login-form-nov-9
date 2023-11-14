@@ -11,6 +11,9 @@ npm install -D vitest jsdom @testing-library/react @testing-library/jest-dom
 "scripts": {
 +  "test": "vitest"
 }
+
+happy path
+edge case - error handling
 ```
 
 # React + Vite
