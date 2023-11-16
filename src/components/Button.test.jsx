@@ -1,4 +1,4 @@
-import {render, screen} from '@testing-library/react'
+import {render, screen, fireEvent} from '@testing-library/react'
 import Button from './Button';
 
 describe('Button', () => {
@@ -8,15 +8,23 @@ describe('Button', () => {
         expect(button).toBeInTheDocument();
     });
 
-    it('should render the Disabled Button', () => {
+    it('should be able to click', () => {
+        const mockOnClick = vi.fn();
+        render(<Button text="meow" onClick={mockOnClick} disabled={false} />);
+        const button = screen.getByRole("button", { name: "meow" });
+        fireEvent.click(button);
+        expect(mockOnClick).toHaveBeenCalled();
+    });
+
+    it('should be disabled', () => {
         render(<Button disabled={true}/>);
         const button = screen.getByRole("button");
-        expect(button).toBeDisabled()
-    })
+        expect(button).toBeDisabled();
+    });
 
-    it('should be able to click', () => {
-        const = fn = vi.fn()
-        render(<Button onClick={fn}/>)
-        expect(fn).toHaveBeencalled()
-    })
+    it('should render the text', () => {
+        render(<Button text="meow"/>);
+        const meowButton = screen.getByText("meow");
+        expect(meowButton).toBeInTheDocument();
+    });
 });

@@ -19,7 +19,7 @@ function App() {
         <Input label='Password' id='password' type='password' onChange={handleChange}/>
 
         <Button text='Login' disabled={!input.username || !input.password} onClick={() => {
-          let message = 'Login unsuccessfully'
+          let message = 'Login unsuccessful'
 
           if(input.username == 'root' && input.password == 'root') {
             message = 'Login successfully'
