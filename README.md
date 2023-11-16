@@ -14,6 +14,12 @@ npm install -D vitest jsdom @testing-library/react @testing-library/jest-dom
 
 happy path
 edge case - error handling
+
+https://vitest.dev/guide/mocking
+https://vitest.dev/api/vi#vi-fn
+
+https://testing-library.com/docs/example-input-event/
+https://testing-library.com/docs/react-testing-library/cheatsheet
 ```
 
 # React + Vite
